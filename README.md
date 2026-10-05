@@ -76,8 +76,6 @@ This produces:
 
 ### 3. Calculate the new finite-size rates
 
-After renaming B92_new_finite_picos.py to B92_new_finite.py, run:
-
     python B92_new_finite.py 0.01 "B92_key_rate_new_finite_depolarizing=0.01"
 
 This produces:
@@ -174,9 +172,9 @@ Install CVXOPT in the same Python environment:
 
     python -m pip install cvxopt
 
-### Accept inaccurate solution
+### Inaccurate solver solutions
 
-Optionally, one can accept an inaccurate solution. This is not recommended for obtaining a robust bound on the key rate, but may be useful to check the expected behavior.
+The current conventional finite-size implementation accepts only solutions reported as optimal by CVXPY/Mosek. Solutions reported as inaccurate are rejected rather than used in the key-rate calculation.
 
 ## Citation and license
 
